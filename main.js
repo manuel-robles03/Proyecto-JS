@@ -79,9 +79,9 @@ function FiltrarCamisetas(){
     let filtrado = listaCamisetas.filter ((camiseta)=> camiseta.modelo.includes(keyword))
 
     if (filtrado.length > 0){
-        console.table(filtrado)
+        console.table("Encontré las siguientes coincidencias: " ,filtrado)
     }else{
-        alert("No se encunetran coincidencias")
+        alert("No se encuentran coincidencias")
     }
 }
 FiltrarCamisetas()
