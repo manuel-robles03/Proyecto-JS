@@ -65,13 +65,13 @@ console.log ("El precio de las camisetas es: " + camiseta1.precio)
 
 const camisetasDeEntrenamiento = []
 
-camisetasDeEntrenamiento.push = new Camisetas (21321, 25000, 30000, "xl", "entrenamiento")
-camisetasDeEntrenamiento.push = new Camisetas (21322, 25000, 30000, "l", "entrenamiento")
-camisetasDeEntrenamiento.push = new Camisetas (21323, 25000, 30000, "m", "entrenamiento")
-camisetasDeEntrenamiento.push = new Camisetas (21324, 25000, 30000, "s", "entrenamiento")
+camisetasDeEntrenamiento.push (new Camisetas (21321, 25000, 30000, "xl", "entrenamiento"))
+camisetasDeEntrenamiento.push (new Camisetas (21322, 25000, 30000, "l", "entrenamiento"))
+camisetasDeEntrenamiento.push (new Camisetas (21323, 25000, 30000, "m", "entrenamiento"))
+camisetasDeEntrenamiento.push (new Camisetas (21324, 25000, 30000, "s", "entrenamiento"))
 
 
-let listaCamisetas = [camiseta1,camiseta2,camiseta3,camiseta4,camiseta5,camiseta6,camiseta7,camiseta8, camisetasDeEntrenamiento]
+let listaCamisetas = [camiseta1,camiseta2,camiseta3,camiseta4,camiseta5,camiseta6,camiseta7,camiseta8]
 
 
 function FiltrarCamisetas(){
