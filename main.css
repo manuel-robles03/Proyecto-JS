@@ -1,12 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 button{
     background-color: red;
     color: white;
 }
+body{
+    background-image: url(assets/monumental.jpg);
+}
+h1{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 10px;
+}
+.formulario{
+    padding: 50px 750px;
+    z-index: 3;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    background-color: red;
+    border-radius: 5px;
+    gap: 15px;
+}
+input{
+    text-align: center;
+    padding: 10px;
+}
+.botones{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+button{
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+}
 .Alerta{
     background-color: black;
+    margin-top: 40px;
+    text-align: center;
+    justify-content: center;
     & h2{
-        color: red;
+        color: white;
         text-align: center;
         font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
     }
 }
