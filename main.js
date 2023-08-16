@@ -91,9 +91,9 @@ function FiltrarCamisetas(){
 FiltrarCamisetas()
 
 const almacenamientoDeDatos = document.getElementById("almacenarDatos")
-stock = document.getElementById("stock")
-talle = document.getElementById("talle")
-modelo = document.getElementById("modelo")
+let stock = document.getElementById("stock")
+let talle = document.getElementById("talle")
+let modelo = document.getElementById("modelo")
 
 almacenamientoDeDatos.addEventListener("click", function(){
     localStorage.setItem("Stock demandado", stock.value)
