@@ -61,6 +61,10 @@ const camiseta6 = new Camisetas (32429, 30000, 600000, "l", "suplente")
 const camiseta7 = new Camisetas (32430, 30000, 600000, "m", "suplente")
 const camiseta8 = new Camisetas (32431, 30000, 600000, "s", "suplente")
 
+const indumentaria = [camiseta1, camiseta2, camiseta3, camiseta4, camiseta5, camiseta6, camiseta7,camiseta8]
+datosJson = JSON.stringify(indumentaria)
+console.log(datosJson)
+
 console.log ("El precio de las camisetas es: " + camiseta1.precio)
 
 const camisetasDeEntrenamiento = []
@@ -85,3 +89,25 @@ function FiltrarCamisetas(){
     }
 }
 FiltrarCamisetas()
+
+const almacenamientoDeDatos = document.getElementById("almacenarDatos")
+stock = document.getElementById("stock")
+talle = document.getElementById("talle")
+modelo = document.getElementById("modelo")
+
+almacenamientoDeDatos.addEventListener("click", function(){
+    localStorage.setItem("Stock demandado", stock.value)
+    localStorage.setItem("Talle pedido", talle.value)
+    localStorage.setItem("Modelo demandado", modelo.value)
+})
+
+const comprar = document.getElementById("confirmarCompra")
+const detalles = document.querySelector(`.Alerta`)
+comprar.addEventListener("click", () => {
+    const confirmacion = document.createElement(`div`)
+    confirmacion.classList.add("Alerta")
+    confirmacion.innerText = 
+    
+    `<h2> Felicidades, has realizado una compra. DETALLES DE COMPRA: - Cantidad de camisetas compradas: ` + stock.value + ` - Talle : ` + talle.value + ` - Modelo : ` + modelo.value ` </h2>`
+    detalles.appendChild(confirmacion)
+})
