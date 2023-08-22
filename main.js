@@ -1,12 +1,11 @@
-debugger
 function bienvenida(Saludo){
     let NombreIngresado = prompt("Ingresa tu nombre")
     if(NombreIngresado == ""){
-        alert("Ingresar nombre")
+        alert('Ingresar nombre')
         bienvenida()
     }
     else{
-        alert("Te damos la bienvenida " + NombreIngresado)
+        Swal.fire('Te damos la bienvenida ' + NombreIngresado)
     }
 }
 bienvenida()
