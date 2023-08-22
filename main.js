@@ -10,7 +10,7 @@ function bienvenida(Saludo){
     }
 }
 bienvenida()
-debugger
+
 function recibirNotificaciones(RecibirNoticias){
     let NotificacionesExtra = prompt("¿Querés recibir notificaciones? (poner si/no)")
     if(NotificacionesExtra == "si"){
@@ -77,7 +77,6 @@ camisetasDeEntrenamiento.push (new Camisetas (21324, 25000, 30000, "s", "entrena
 
 let listaCamisetas = [camiseta1,camiseta2,camiseta3,camiseta4,camiseta5,camiseta6,camiseta7,camiseta8]
 
-debugger
 function FiltrarCamisetas(){
     let keyword = prompt ("Ingresa el modelo de camiseta que queres buscar")
     let filtrado = listaCamisetas.filter ((camiseta)=> camiseta.modelo.includes(keyword))
