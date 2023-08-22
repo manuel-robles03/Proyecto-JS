@@ -1,12 +1,10 @@
-debugger
 function bienvenida(Saludo){
     let NombreIngresado = prompt("Ingresa tu nombre")
     if(NombreIngresado == ""){
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Something went wrong!',
-            footer: '<a href="">Why do I have this issue?</a>'
+            text: 'No colocaste tu nombre, porfavor intenta de vuelta',
           })
         bienvenida()
     }
@@ -20,7 +18,7 @@ function recibirNotificaciones(RecibirNoticias){
     let NotificacionesExtra = prompt("¿Querés recibir notificaciones? (poner si/no)")
     if(NotificacionesExtra == "si"){
         IngresarMail = prompt("Coloca tu mail para recibir cualquier tipo de notificación")
-        alert("¡¡Listo " + IngresarMail + ", disfruta de nuestra página y todos sus beneficios!!")
+        Swal.fire("¡¡Listo " + IngresarMail + ", disfruta de nuestra página y todos sus beneficios!!")
 
         let MailSoporte = "SoporteTecnicoCARP@gmail.com"
         for (i = 1; i<8; i++){
@@ -32,16 +30,21 @@ function recibirNotificaciones(RecibirNoticias){
     }
    
     else if(NotificacionesExtra == "no"){
-        Agradecimiento = alert("¡¡¡No pasa nada, disfruta nuestra página!!!")
+        Agradecimiento = Swal.fire("¡¡¡No pasa nada, disfruta nuestra página!!!")
         console.log ("No ingreso ningun mail, por lo tanto no recibira notificaciones Extra")
     }
     else if(NotificacionesExtra == "")
     {
-        alert("Ingresar si o no!")
+        Swal.fire("Ingresar si o no!")
         recibirNotificaciones()
     }
     else{
-        alert("Inválido")
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Inválido',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
         recibirNotificaciones()
     }
 }
@@ -89,7 +92,7 @@ function FiltrarCamisetas(){
     if (filtrado.length > 0){
         console.table("Encontré las siguientes coincidencias: " ,filtrado)
     }else{
-        alert("No se encuentran coincidencias")
+       Swal.fire("No se encuentran coincidencias")
     }
 }
 FiltrarCamisetas()
