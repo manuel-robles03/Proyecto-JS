@@ -6,6 +6,10 @@ button{
     background-color: red;
     color: white;
 }
+.botonAceptar{
+    text-decoration: none;
+    color: white;
+}
 body{
     background-image: url(assets/monumental.jpg);
 }

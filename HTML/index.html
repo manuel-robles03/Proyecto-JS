@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Javascript-Robles</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../main.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <header>
 <div class="header">
-    <img src="assets/escudo-riverplate.png" alt="escudo del club atletico river plate">
+    <img src="../assets/escudo-riverplate.png" alt="escudo del club atletico river plate">
 </div>
 
     <h1>BIENVENIDO/A A LA MEJOR PÁGINA DEL CLUB ATLÉTICO RIVER PLATE</h1>
@@ -19,14 +19,13 @@
 <main>
 <div class="formulario">
 <form action="">
-    <input type="number" id="stock" name="stock" placeholder="Ingresa la cantidad que queres">
-    <input type="text" id="modelo" name="modelo" placeholder="Ingresa el modelo que buscas">
-    <input type="text" id="talle" name="talle" placeholder="Ingresa el talle que buscas">
+    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
+    <input type="text" id="notificaciones" name="notificaciones" placeholder="Ingresa si/no para recibir notifiaciones extra">
+    <input type="text" id="mail" name="mail" placeholder="Ingresa tu mail">
 </form>
 </div>
 <div class="botones">
-    <button id="almacenarDatos">ALMACENAR DATOS</button>
-    <button id="confirmarCompra" type="submit">COMPRAR</button>
+    <button id="guardarDatos"><a class="botonAceptar" href="compra.html">ACEPTAR</a></button>
 </div>
 
 <div class="Alerta">
@@ -36,6 +35,6 @@
 <footer>
 
 </footer>
-<script src="main.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>
