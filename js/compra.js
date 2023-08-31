@@ -50,7 +50,11 @@ const detalles = document.querySelector(`.Alerta`)
 comprar.addEventListener("click", () => {
     const confirmacion = document.createElement(`div`)
     confirmacion.classList.add("Alerta")
-    confirmacion.innerHTML = 
+    confirmacion.innerHTML = Swal.fire({
+        icon: 'success',
+        title: ' Felicidades, has realizado una compra.',
+        footer: '<a href="https://www.cariverplate.com.ar/index.php" target="_blank">INGRESÁ A ESTE LINK POR SI HAY DUDAS</a>',
+      })
     
     `<h2> Felicidades, has realizado una compra. DETALLES DE COMPRA: - Cantidad de camisetas compradas: ` + stock.value + ` - Talle : ` + talle.value + ` - Modelo : ` + modelo.value + ` </h2>`
     detalles.appendChild(confirmacion)
