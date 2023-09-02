@@ -59,3 +59,21 @@ comprar.addEventListener("click", () => {
     `<h2> Felicidades, has realizado una compra. DETALLES DE COMPRA: - Cantidad de camisetas compradas: ` + stock.value + ` - Talle : ` + talle.value + ` - Modelo : ` + modelo.value + ` </h2>`
     detalles.appendChild(confirmacion)
 })
+
+
+fetch("camisetas.json")
+    .then(resp => resp.json())
+    .then(data => {
+
+        const camisetas = data.camisetas
+        const productocamisetas = document.getElementById("(ID DIV CREADO TUYO)")
+
+        camisetas.forEach((x) => {
+            const camisetasjson= document.createElement(p)
+            camisetasjson.console.table = `Modelo de la camisetas:`  + x.Modelo +`.  Id de la camiseta: ` + x.Id + `.Talle : ` + x.Talle +
+            productocamisetas.appendChild(camisetasjson)
+        })
+            .catch(Swal.fire("Ocurrio un fallo en el sistema"))
+    }
+
+    )
