@@ -1,9 +1,65 @@
-{"camisetas":[
-
-
-
-
-
+{
+    "camisetas": [
+        {
+            "Id": 32424,
+            "Talle": "XL",
+            "Modelo": "titular"
+        },
+        {
+            "Id": 32425,
+            "Talle": "L",
+            "Modelo": "titular"
+        },
+        {
+            "Id": 32426,
+            "Talle": "M",
+            "Modelo": "titular"
+        },
+        {
+            "Id": 32427,
+            "Talle": "S",
+            "Modelo": "titular"
+        },
+        {
+            "Id": 32428,
+            "Talle": "XL",
+            "Modelo": "suplente"
+        },
+        {
+            "Id": 32429,
+            "Talle": "L",
+            "Modelo": "suplente"
+        },
+        {
+            "Id": 32430,
+            "Talle": "M",
+            "Modelo": "suplente"
+        },
+        {
+            "Id": 32431,
+            "Talle": "S",
+            "Modelo": "suplente"
+        },
+        {
+            "Id": 21321,
+            "Talle": "XL",
+            "Modelo": "entrenamiento"
+        },
+        {
+            "Id": 21322,
+            "Talle": "L",
+            "Modelo": "entrenamiento"
+        },
+        {
+            "Id": 21323,
+            "Talle": "M",
+            "Modelo": "entrenamiento"
+        },
+        {
+            "Id": 21324,
+            "Talle": "S",
+            "Modelo": "entrenamiento"
+        }
 
 ]
 
