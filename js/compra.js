@@ -66,11 +66,11 @@ fetch("camisetas.json")
     .then(data => {
 
         const camisetas = data.camisetas
-        const productocamisetas = document.getElementById("(ID DIV CREADO TUYO)")
+        const productocamisetas = document.getElementById("stockJson")
 
         camisetas.forEach((x) => {
-            const camisetasjson= document.createElement(p)
-            camisetasjson.console.table = `Modelo de la camisetas:`  + x.Modelo +`.  Id de la camiseta: ` + x.Id + `.Talle : ` + x.Talle +
+            const camisetasjson= document.createElement('p')
+            camisetasjson.textContent = `Modelo de la camisetas:`  + x.Modelo +`.  Id de la camiseta: ` + x.Id + `.Talle : ` + x.Talle 
             productocamisetas.appendChild(camisetasjson)
         })
             .catch(Swal.fire("Ocurrio un fallo en el sistema"))
