@@ -1,12 +1,12 @@
-class Camisetas{
-    constructor(id, precio, stock, talle, modelo){
-        this.id=id
-        this.precio=precio
-        this.stock=stock
-        this.talle=talle
-        this.modelo=modelo
+class Camisetas {
+    constructor(id, precio, stock, talle, modelo) {
+      this.id = id;
+      this.precio = precio;
+      this.stock = stock;
+      this.talle = talle;
+      this.modelo = modelo;
     }
-}
+  }
 
 const camiseta1 = new Camisetas (32424, 30000, 600000, "xl", "titular")
 const camiseta2 = new Camisetas (32425, 30000, 600000, "l", "titular")
@@ -34,46 +34,50 @@ camisetasDeEntrenamiento.push (new Camisetas (21324, 25000, 30000, "s", "entrena
 let listaCamisetas = [camiseta1,camiseta2,camiseta3,camiseta4,camiseta5,camiseta6,camiseta7,camiseta8]
 
 
-const almacenamientoDeDatos = document.getElementById("almacenarDatos")
-let stock = document.getElementById("stock")
-let talle = document.getElementById("talle")
-let modelo = document.getElementById("modelo")
+const almacenamientoDeDatos = document.getElementById("almacenarDatos");
+let stock = document.getElementById("stock");
+let talle = document.getElementById("talle");
+let modelo = document.getElementById("modelo");
 
-almacenamientoDeDatos.addEventListener("click", function(){
-    localStorage.setItem("Stock demandado", stock.value)
-    localStorage.setItem("Talle pedido", talle.value)
-    localStorage.setItem("Modelo demandado", modelo.value)
-})
+almacenamientoDeDatos.addEventListener("click", function () {
+  localStorage.setItem("Stock demandado", stock.value);
+  localStorage.setItem("Talle pedido", talle.value);
+  localStorage.setItem("Modelo demandado", modelo.value);
+});
 
-const comprar = document.getElementById("confirmarCompra")
-const detalles = document.querySelector(`.Alerta`)
+const comprar = document.getElementById("confirmarCompra");
+const detalles = document.querySelector(".Alerta");
 comprar.addEventListener("click", () => {
-    const confirmacion = document.createElement(`div`)
-    confirmacion.classList.add("Alerta")
-    confirmacion.innerHTML = Swal.fire({
-        icon: 'success',
-        title: ' Felicidades, has realizado una compra.',
-        footer: '<a href="https://www.cariverplate.com.ar/index.php" target="_blank">INGRESÁ A ESTE LINK POR SI HAY DUDAS</a>',
-      })
-    
-    `<h2> Felicidades, has realizado una compra. DETALLES DE COMPRA: - Cantidad de camisetas compradas: ` + stock.value + ` - Talle : ` + talle.value + ` - Modelo : ` + modelo.value + ` </h2>`
-    detalles.appendChild(confirmacion)
-})
+  const confirmacion = document.createElement(`div`);
+  confirmacion.classList.add("Alerta");
+  confirmacion.innerHTML = Swal.fire({
+    icon: 'success',
+    title: '¡Felicidades, has realizado una compra!',
+    footer: '<a href="https://www.cariverplate.com.ar/index.php" target="_blank">INGRESA A ESTE ENLACE EN CASO DE DUDAS</a>',
+  });
 
+  `<h2> ¡Felicidades, has realizado una compra! DETALLES DE COMPRA: - Cantidad de camisetas compradas: ` + stock.value + ` - Talle: ` + talle.value + ` - Modelo: ` + modelo.value + ` </h2>`;
+  detalles.appendChild(confirmacion);
+});
 
 fetch("camisetas.json")
-    .then(resp => resp.json())
-    .then(data => {
-
-        const camisetas = data.camisetas
-        const productocamisetas = document.getElementById("stockJson")
-
-        camisetas.forEach((x) => {
-            const camisetasjson= document.createElement('p')
-            camisetasjson.textContent = `Modelo de la camisetas:`  + x.Modelo +`.  Id de la camiseta: ` + x.Id + `.Talle : ` + x.Talle 
-            productocamisetas.appendChild(camisetasjson)
-        })
-            .catch(Swal.fire("Ocurrio un fallo en el sistema"))
+  .then((resp) => {
+    if (!resp.ok) {
+      throw new Error("La respuesta de la red no fue exitosa");
     }
+    return resp.json();
+  })
+  .then((data) => {
+    const camisetas = data; 
+    const productocamisetas = document.getElementById("stockJson");
 
-    )
+    camisetas.forEach((x) => {
+      const camisetasjson = document.createElement('p');
+      camisetasjson.textContent = `Modelo de la camiseta:` + x.modelo + `. ID de la camiseta: ` + x.id + `. Talle: ` + x.talle;
+      productocamisetas.appendChild(camisetasjson);
+    });
+  })
+  .catch((error) => {
+    console.error("Error al obtener datos:", error);
+    Swal.fire("Ocurrió un fallo en el sistema");
+  });
